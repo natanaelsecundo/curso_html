@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cavalo em HTML</title>
+</head>
+<body>
+    <canvas id="cavalo" width="300" height="300"></canvas>
+    <script>
+        const canvas = document.getElementById('cavalo');
+        const ctx = canvas.getContext('2d');
+
+        // Corpo do cavalo
+        ctx.fillStyle = '#8B4513'; // marrom
+        ctx.fillRect(100, 150, 100, 50); // corpo
+
+        // Pescoço
+        ctx.fillRect(150, 130, 20, 30); // pescoço
+
+        // Cabeça
+        ctx.beginPath();
+        ctx.arc(160, 110, 20, 0, Math.PI * 2); // cabeça
+        ctx.fill();
+
+        // Olho
+        ctx.fillStyle = 'white';
+        ctx.beginPath();
+        ctx.arc(165, 105, 5, 0, Math.PI * 2); // olho
+        ctx.fill();
+
+        ctx.fillStyle = 'black';
+        ctx.beginPath();
+        ctx.arc(165, 105, 2, 0, Math.PI * 2); // pupila
+        ctx.fill();
+
+        // Orelha
+        ctx.fillStyle = '#8B4513'; // marrom
+        ctx.beginPath();
+        ctx.moveTo(155, 95);
+        ctx.lineTo(150, 85);
+        ctx.lineTo(160, 95);
+        ctx.fill();
+
+        // Pernas
+        ctx.fillStyle = '#8B4513'; // marrom
+        ctx.fillRect(110, 200, 10, 50); // perna esquerda
+        ctx.fillRect(180, 200, 10, 50); // perna direita
+
+        // Cauda
+        ctx.beginPath();
+        ctx.moveTo(100, 160);
+        ctx.lineTo(80, 140);
+        ctx.lineTo(100, 155);
+        ctx.fill();
+    </script>
+</body>
+</html>
