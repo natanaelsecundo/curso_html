@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapo em HTML</title>
+</head>
+<body>
+    <canvas id="sapo" width="200" height="200"></canvas>
+    <script>
+        const canvas = document.getElementById('sapo');
+        const ctx = canvas.getContext('2d');
+
+        // Corpo do sapo
+        ctx.fillStyle = 'green';
+        ctx.beginPath();
+        ctx.ellipse(100, 100, 70, 40, Math.PI, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Olhos
+        ctx.fillStyle = 'white';
+        ctx.beginPath();
+        ctx.arc(80, 80, 10, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(120, 80, 10, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = 'black';
+        ctx.beginPath();
+        ctx.arc(80, 80, 5, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(120, 80, 5, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Boca
+        ctx.strokeStyle = 'black';
+        ctx.beginPath();
+        ctx.arc(100, 100, 30, 0, Math.PI);
+        ctx.stroke();
+    </script>
+</body>
+</html>
